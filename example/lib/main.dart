@@ -94,7 +94,8 @@ class _MyAppState extends State<MyApp> {
     options.putIfAbsent("amount", () => "100");
     options.putIfAbsent("email", () => "test@testing.com");
     options.putIfAbsent("contact", () => "9988776655");
-    options.putIfAbsent("api_key", () => "hahahaha");
+    options.putIfAbsent("theme", () => "#000000");
+    options.putIfAbsent("api_key", () => "rzp_test_PQP7wnR4sxpUcW");
     Map<dynamic,dynamic> paymentResponse = new Map();
     paymentResponse = await Razorpay.showPaymentForm(options);
     print("response $paymentResponse");

@@ -9,7 +9,7 @@ import com.razorpay.Checkout;
 import com.razorpay.PaymentResultListener;
 
 import org.json.JSONObject;
- 
+
 public class RazorpayActivity extends Activity implements PaymentResultListener {
     private static final String TAG = RazorpayActivity.class.getSimpleName();
     public static String EXTRA_PRODUCT_NAME = "name";
@@ -17,9 +17,11 @@ public class RazorpayActivity extends Activity implements PaymentResultListener 
     public static String EXTRA_PRODUCT_DESCRIPTION = "description";
     public static String EXTRA_PRODUCT_AMOUNT = "amount";
     public static String EXTRA_PREFILL_EMAIL = "email";
+    public static String EXTRA_THEME = "theme";
     public static String EXTRA_PREFILL_CONTACT = "contact";
     public static String PAYMENT_ID = "payment_id";
     public static String RAZORPAY_KEY = "api_key";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +49,9 @@ public class RazorpayActivity extends Activity implements PaymentResultListener 
             options.put(EXTRA_PRODUCT_IMAGE, intent.getStringExtra(EXTRA_PRODUCT_IMAGE));
             options.put("currency", "INR");
             options.put(EXTRA_PRODUCT_AMOUNT, intent.getStringExtra(EXTRA_PRODUCT_AMOUNT));
-
+            JSONObject color = new JSONObject();
+            color.put("color", intent.getStringExtra(EXTRA_THEME));
+            options.put("theme",color);
             JSONObject preFill = new JSONObject();
             preFill.put(EXTRA_PREFILL_EMAIL, intent.getStringExtra(EXTRA_PREFILL_EMAIL));
             preFill.put(EXTRA_PREFILL_CONTACT, intent.getStringExtra(EXTRA_PREFILL_CONTACT));
