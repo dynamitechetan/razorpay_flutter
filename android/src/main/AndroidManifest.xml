@@ -1,3 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
   package="com.hashbnm.razorpayplugin">
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+
+    <application>
+        <activity
+                android:name=".RazorpayActivity"
+                android:configChanges="orientation|screenSize|keyboardHidden|navigation"></activity>
+    </application>
 </manifest>

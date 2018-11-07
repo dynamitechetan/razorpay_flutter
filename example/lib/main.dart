@@ -86,6 +86,18 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
-  startPayment() {
+  startPayment() async {
+    Map<String, dynamic> options = new Map();
+    options.putIfAbsent("name", () => "Razorpay T-Shirt");
+    options.putIfAbsent("image", () => "https://www.73lines.com/web/image/12427");
+    options.putIfAbsent("description", () => "This is a real transaction");
+    options.putIfAbsent("amount", () => "100");
+    options.putIfAbsent("email", () => "test@testing.com");
+    options.putIfAbsent("contact", () => "9988776655");
+    options.putIfAbsent("api_key", () => "hahahaha");
+    Map<dynamic,dynamic> paymentResponse = new Map();
+    paymentResponse = await Razorpay.showPaymentForm(options);
+    print("response $paymentResponse");
+
   }
 }
