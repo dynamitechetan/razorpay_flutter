@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
 
-import 'package:flutter/services.dart';
 import 'package:razorpay_plugin/razorpay_plugin.dart';
-
 void main() => runApp(new MyApp());
 
 class MyApp extends StatefulWidget {
@@ -12,45 +9,83 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String _platformVersion = 'Unknown';
-
-  @override
-  void initState() {
-    super.initState();
-    initPlatformState();
-  }
-
-  // Platform messages are asynchronous, so we initialize in an async method.
-  Future<void> initPlatformState() async {
-    String platformVersion;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    try {
-      platformVersion = await RazorpayPlugin.platformVersion;
-    } on PlatformException {
-      platformVersion = 'Failed to get platform version.';
-    }
-
-    // If the widget was removed from the tree while the asynchronous platform
-    // message was in flight, we want to discard the reply rather than calling
-    // setState to update our non-existent appearance.
-    if (!mounted) return;
-
-    setState(() {
-      _platformVersion = platformVersion;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      home: new Scaffold(
-        appBar: new AppBar(
-          title: const Text('Plugin example app'),
-        ),
-        body: new Center(
-          child: new Text('Running on: $_platformVersion\n'),
-        ),
-      ),
+    return MaterialApp(
+      home: Scaffold(
+          backgroundColor: Color(0XFF00b1e1),
+          body: new Container(
+            margin: const EdgeInsets.symmetric(
+              vertical: 100.0,
+              horizontal: 24.0,
+            ),
+            child: new Stack(
+              children: <Widget>[
+                new Container(
+                  child: new Container(
+                    constraints: new BoxConstraints.expand(),
+                    child: new Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        new Container(
+                          height: 80.0,
+                          color: Color(0xFFE2E2E2),
+                        ),
+                        new Container(height: 16.0),
+                        new Text(
+                          "Razorpay T-Shirt",
+                          style: TextStyle(fontSize: 20.0),
+                        ),
+                        new Container(height: 8.0),
+                        new Text("INR 1.0"),
+                        new Container(height: 8.0),
+                        new Text(
+                          "This is a real transcation",
+                          style: TextStyle(fontStyle: FontStyle.italic),
+                        ),
+                        new Container(height: 16.0),
+                        new RaisedButton(
+                          onPressed: () {
+                            startPayment();
+                          },
+                          child: new Text(
+                            "Purchase",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          color: Colors.green,
+                          splashColor: Colors.blue,
+                        )
+                      ],
+                    ),
+                  ),
+                  height: 280.0,
+                  margin: new EdgeInsets.only(top: 72.0),
+                  decoration: new BoxDecoration(
+                    color: new Color(0xFFFFFFFF),
+                    shape: BoxShape.rectangle,
+                  ),
+                ),
+                new Container(
+                  margin: new EdgeInsets.symmetric(vertical: 16.0),
+                  alignment: FractionalOffset.topCenter,
+                  child: Column(
+                    children: <Widget>[
+                      new Image.network(
+                        "https://www.73lines.com/web/image/12427",
+                        width: 92.0,
+                        height: 92.0,
+                      ),
+                      new Container(height: 12.0),
+                      new Text("Order #RZP42"),
+                    ],
+                  ),
+                )
+              ],
+            ),
+          )),
     );
+  }
+
+  startPayment() {
   }
 }
