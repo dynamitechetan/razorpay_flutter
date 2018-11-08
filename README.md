@@ -30,6 +30,15 @@ import 'package:razorpay_plugin/razorpay_plugin.dart';
     print("response $paymentResponse");
   }
 ```  
+Response : 
+```
+ {"code": 0, "message": "payment cancelled by user"}
+```
+or 
+```
+ {"code": 1, "message": "rpz_asdw23axd223s"}
+```
+If payment is sucessfull message will contain the payment_id from razorpay.
 
 ### Demo app
 <table>
