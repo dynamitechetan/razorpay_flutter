@@ -1,6 +1,6 @@
 name: razorpay_plugin
-description: A Flutter Plugin for Razorpay payment
-version: 0.2.0
+description: A Plugin for integrating Razorpay payment gateway in Flutter Apps. Supports both Android and iOS.
+version: 0.2.1
 author: chetan<dynamitechetan@gmail.com>
 homepage: https://github.com/dynamitechetan/razorpay_flutter
 

@@ -96,7 +96,12 @@ class _MyAppState extends State<MyApp> {
     options.putIfAbsent("contact", () => "9988776655");
     //Must be a valid HTML color.
     options.putIfAbsent("theme", () => "#FF0000");
-    options.putIfAbsent("api_key", () => "hahaha");
+    options.putIfAbsent("api_key", () => "haha");
+    //Notes -- OPTIONAL
+    Map<String, String> notes = new Map();
+    notes.putIfAbsent('key', () => "value");
+    notes.putIfAbsent('randomInfo', () => "haha");
+    options.putIfAbsent("notes", () => notes);
     Map<dynamic,dynamic> paymentResponse = new Map();
     paymentResponse = await Razorpay.showPaymentForm(options);
     print("response $paymentResponse");

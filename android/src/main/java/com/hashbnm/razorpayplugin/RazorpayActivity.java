@@ -10,6 +10,11 @@ import com.razorpay.PaymentResultListener;
 
 import org.json.JSONObject;
 
+
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
+
 public class RazorpayActivity extends Activity implements PaymentResultListener {
     private static final String TAG = RazorpayActivity.class.getSimpleName();
     public static String EXTRA_PRODUCT_NAME = "name";
@@ -17,6 +22,7 @@ public class RazorpayActivity extends Activity implements PaymentResultListener 
     public static String EXTRA_PRODUCT_DESCRIPTION = "description";
     public static String EXTRA_PRODUCT_AMOUNT = "amount";
     public static String EXTRA_PREFILL_EMAIL = "email";
+    public static String EXTRA_NOTES = "notes";
     public static String EXTRA_THEME = "theme";
     public static String EXTRA_PREFILL_CONTACT = "contact";
     public static String PAYMENT_ID = "payment_id";
@@ -55,8 +61,19 @@ public class RazorpayActivity extends Activity implements PaymentResultListener 
             JSONObject preFill = new JSONObject();
             preFill.put(EXTRA_PREFILL_EMAIL, intent.getStringExtra(EXTRA_PREFILL_EMAIL));
             preFill.put(EXTRA_PREFILL_CONTACT, intent.getStringExtra(EXTRA_PREFILL_CONTACT));
-
             options.put("prefill", preFill);
+
+            if (intent.getSerializableExtra(EXTRA_NOTES) != null) {
+                JSONObject notes = new JSONObject();
+                Serializable noteObj = intent.getSerializableExtra(EXTRA_NOTES);
+                HashMap<String, String> noteMap= (HashMap<String, String>) noteObj;
+                for (Map.Entry<String, String> entry : noteMap.entrySet()) {
+                    String key = entry.getKey();
+                    String value = entry.getValue();
+                    notes.put(key, value);
+                }
+                options.put(EXTRA_NOTES, notes);
+            }
 
             co.open(activity, options);
         } catch (Exception e) {

@@ -8,10 +8,9 @@ import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
 import io.flutter.plugin.common.PluginRegistry;
 import io.flutter.plugin.common.PluginRegistry.Registrar;
-
 import java.util.HashMap;
 import java.util.Map;
-
+import java.io.Serializable;
 /**
  * RazorpayPlugin
  */
@@ -49,6 +48,7 @@ public class RazorpayPlugin implements MethodCallHandler, PluginRegistry.Activit
             razorpayIntent.putExtra(RazorpayActivity.EXTRA_PRODUCT_AMOUNT, (String) arguments.get("amount"));
             razorpayIntent.putExtra(RazorpayActivity.EXTRA_PREFILL_EMAIL, (String) arguments.get("email"));
             razorpayIntent.putExtra(RazorpayActivity.EXTRA_THEME, (String) arguments.get("theme"));
+            razorpayIntent.putExtra(RazorpayActivity.EXTRA_NOTES, (Serializable) arguments.get("notes"));
 
             razorpayIntent.putExtra(RazorpayActivity.EXTRA_PREFILL_CONTACT, (String) arguments.get("contact"));
             razorpayIntent.putExtra(RazorpayActivity.RAZORPAY_KEY, (String) arguments.get("api_key"));
