@@ -1,6 +1,6 @@
 name: razorpay_plugin
 description: A Flutter Plugin for Razorpay payment
-version: 0.0.2
+version: 0.2.0
 author: chetan<dynamitechetan@gmail.com>
 homepage: https://github.com/dynamitechetan/razorpay_flutter
 
