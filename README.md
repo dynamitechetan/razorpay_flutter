@@ -6,7 +6,7 @@ A flutter plugin for razorpay integration for both android and ios.
 ### Installing
 Add this in pubspec.yaml
 ```
-  razorpay_plugin: ^0.0.2
+  razorpay_plugin: ^0.2.1
 ```
 ### Using
 ```
@@ -24,11 +24,17 @@ import 'package:razorpay_plugin/razorpay_plugin.dart';
     options.putIfAbsent("contact", () => "9988776655");
     //Must be a valid HTML color.
     options.putIfAbsent("theme", () => "#FF0000");
+    //Notes -- OPTIONAL
+    Map<String, String> notes = new Map();
+    notes.putIfAbsent('key', () => "value");
+    notes.putIfAbsent('randomInfo', () => "haha");
+    options.putIfAbsent("notes", () => notes);
     options.putIfAbsent("api_key", () => "API_KEY_HERE");
     Map<dynamic,dynamic> paymentResponse = new Map();
     paymentResponse = await Razorpay.showPaymentForm(options);
     print("response $paymentResponse");
-  }
+
+}
 ```  
 Response : 
 ```
