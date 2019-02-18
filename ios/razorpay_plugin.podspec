@@ -15,7 +15,7 @@ A new Flutter project.
   s.source_files = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
-  s.dependency 'razorpay-pod','~> 1.0.26'
+  s.dependency 'razorpay-pod','~> 1.0.27'
 
   s.ios.deployment_target = '10.0'
 end
