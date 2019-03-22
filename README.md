@@ -6,7 +6,7 @@ A flutter plugin for razorpay integration for both android and ios.
 ### Installing
 Add this in pubspec.yaml
 ```
-  razorpay_plugin: ^0.2.5
+  razorpay_plugin: ^0.2.6
 ```
 ### Using
 ```
