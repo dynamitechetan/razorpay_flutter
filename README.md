@@ -3,6 +3,8 @@
 
 A flutter plugin for razorpay integration for both android and ios.
 
+#### If you use this library in your app, please let me know and I'll add it to the list.
+
 ### Installing
 Add this in pubspec.yaml
 ```
@@ -57,3 +59,6 @@ If payment is sucessfull message will contain the payment_id from razorpay.
       </td>
     </tr>
   </table>
+  
+  ## Apps using this library
+- Worth It - Best Deals, Offers & Discounts [Android](https://play.google.com/store/apps/details?id=com.worthitproductions) |          [iOS](https://itunes.apple.com/us/app/worthit-deals-discounts/id1450975646?ls=1&mt=8)
