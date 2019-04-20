@@ -25,11 +25,12 @@ public class SwiftRazorpayPlugin: NSObject, FlutterPlugin, RazorpayPaymentComple
             let prefill_contact = argue!["contact"] as? String
             let product_theme = argue!["theme"] as? String
             let API_KEY = argue!["api_key"] as? String
+            let notes = argue!["notes"] as? NSDictionary
             razorpay = Razorpay.initWithKey(API_KEY!, andDelegate: self )
-            showPaymentForm(name: product_name!, des:product_des!, image:product_image!, amount:product_amount!,email:prefill_email!, contact:prefill_contact!, theme:product_theme!);
+            showPaymentForm(name: product_name!, des:product_des!, image:product_image!, amount:product_amount!,email:prefill_email!, contact:prefill_contact!, theme:product_theme!, notes: notes);
         }
     }
-    public func showPaymentForm(name:String,des:String,image:String,amount:String,email:String,contact:String,theme:String)
+    public func showPaymentForm(name:String,des:String,image:String,amount:String,email:String,contact:String,theme:String, notes: NSDictionary?)
     {
         let params: [String:Any] =
             [
@@ -44,6 +45,7 @@ public class SwiftRazorpayPlugin: NSObject, FlutterPlugin, RazorpayPaymentComple
                 "theme":[
                     "color":theme
                 ],
+                "notes": notes ?? [:]
             ]
         razorpay.open(params)
     }
