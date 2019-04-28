@@ -1,9 +1,9 @@
 PODS:
   - Flutter (1.0.0)
-  - razorpay-pod (1.0.27)
+  - razorpay-pod (1.1.2)
   - razorpay_plugin (0.0.1):
     - Flutter
-    - razorpay-pod (~> 1.0.27)
+    - razorpay-pod (~> 1.1.2)
 
 DEPENDENCIES:
   - Flutter (from `.symlinks/flutter/ios`)
@@ -20,10 +20,10 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/razorpay_plugin/ios"
 
 SPEC CHECKSUMS:
-  Flutter: 9d0fac939486c9aba2809b7982dfdbb47a7b0296
-  razorpay-pod: 42c974508ed1134ee28619e54677e0a05252b502
-  razorpay_plugin: 922bbd32448b673a247e5b23426861e1d84db2b0
+  Flutter: 58dd7d1b27887414a370fcccb9e645c08ffd7a6a
+  razorpay-pod: bd7b4bfedd59002e7c30d96dd71fe31e740f2bcf
+  razorpay_plugin: 875b159a57298205d21cf42bd8fd02349af0833c
 
 PODFILE CHECKSUM: 7765ea4305eaab0b3dfd384c7de11902aa3195fd
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.1
