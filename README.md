@@ -8,7 +8,7 @@ A flutter plugin for razorpay integration for both android and ios.
 ### Installing
 Add this in pubspec.yaml
 ```
-  razorpay_plugin: ^0.2.9
+  razorpay_plugin: ^0.3.0
 ```
 ### Using
 ```
@@ -46,7 +46,7 @@ or
 ```
  {"code": 1, "message": "rpz_asdw23axd223s"}
 ```
-If payment is sucessfull message will contain the payment_id from razorpay.
+If payment is successful message will contain the payment_id from razorpay.
 
 ### Demo app
 <table>
